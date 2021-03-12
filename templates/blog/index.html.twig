@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+
+{% for annonce in annonces %}
+<section class="annonces">
+
+<article>
+<h2> {{ annonce.title }} </h2>
+<div class="metadata"> Posté le {{ annonce.createdAt | date ('d/m/Y') }} à {{ annonce.createdAt | date('H:i') }} dans la catégories {{ annonce.category.title}} </div>
+    <div class="content">
+        <img src="{{ annonce.image }}" alt="">
+        
+            {{ annonce.content }}
+                <a href="{{ path ('blog_show', {'id': annonce.id}) }}" class="btn btn-primary"> Lire la suite </a>
+</article>
+
+</div>
+{% endfor %}
+
+</section>
+{% endblock %}

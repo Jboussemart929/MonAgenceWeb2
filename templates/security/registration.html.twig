@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block titre %}Inscription{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+    {{ form_row(form.username,{"attr":{"placeholder":"Nom d'Utilisateur"},"label":"Votre nom d'utilisateur"}) }}
+     {{ form_row(form.email,{"attr":{"placeholder":"Votre email"},"label":"Votre email"}) }}
+    {{ form_row(form.password,{"attr":{"placeholder":"password"},"label":"Entrer votre mot de passe"}) }}
+    {{ form_row(form.confirm_password,{"attr":{"placeholder":"Veuillez répéter votre mot de passe"},"label":"Confirmer votre mot de passe"}) }}
+
+    {{ form_widget(form) }}
+    <input type="submit" value="Inscription">
+{{ form_end(form) }}
+{% endblock %}
